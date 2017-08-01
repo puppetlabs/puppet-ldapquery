@@ -122,7 +122,7 @@ module PuppetX
           attr = attribute.to_s
           value_data = []
           Array(values).flatten.each do |v|
-            value_data << v.chomp
+            value_data << v.force_encoding('UTF-8').chomp
           end
           entry_data[attr] = value_data
         end
