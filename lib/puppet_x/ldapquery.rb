@@ -119,10 +119,10 @@ module PuppetX
       entries.each do |entry|
         entry_data = {}
         entry.each do |attribute, values|
-          attr = attribute.to_s.force_encoding('UTF-8')
+          attr = attribute.to_s
           value_data = []
           Array(values).flatten.each do |v|
-            value_data << v.to_s.force_encoding('UTF-8').chomp.force_encoding('UTF-8')
+            value_data << v.to_s.force_encoding('ISO-8859-1').chomp
           end
           entry_data[attr] = value_data
         end
